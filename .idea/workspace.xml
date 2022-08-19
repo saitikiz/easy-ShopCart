@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33ac930f-68c3-4368-a93b-b562065b7cdb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,11 +160,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\GRAL\Dropbox\Projeler\EasyCep\easy-ShopCart" />
       <recent name="C:\Users\GRAL\Dropbox\Projeler\EasyCep\shop\resources\views\frontend\cart" />
       <recent name="C:\Users\GRAL\Dropbox\Projeler\EasyCep\shop\public\css" />
       <recent name="C:\Users\GRAL\Dropbox\Projeler\EasyCep\shop\resources\views\frontend" />
       <recent name="C:\Users\GRAL\Dropbox\Projeler\EasyCep\shop\resources\views\front" />
-      <recent name="C:\Users\GRAL\Dropbox\Projeler\EasyCep\shop\database\seeders" />
     </key>
   </component>
   <component name="RunManager">

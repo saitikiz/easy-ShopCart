@@ -12,18 +12,22 @@
 ## Proje Kurulum
 
 
-- docker-compose up -d
-- composer install
+- docker-compose build
+- docker-compose up
+- docker laravel adında bir veri tabanı oluşturuyor başka bir veri tabanı kullanmak için
+localhost:81 adresinden phpmyadmine şifresiz root kullanıcı adı ile girip veri tabanları yönetilebilir.
 - .env.example dosyasını .env olarak güncelleyin
 - veritabanı bilgilerini girin<br>
-  DB_HOST=db<br>
-  DB_PORT=3306<br>
-  DB_DATABASE=laravel<br>
-  DB_USERNAME=root<br>
-  DB_PASSWORD=<br>
-- php artisan migrate --seed
-- php artisan key:generate
-- http://localhost
+DB_HOST=db<br>
+DB_PORT=3306<br>
+DB_DATABASE=laravel<br>
+DB_USERNAME=root<br>
+DB_PASSWORD=<br>
+
+
+- docker-compose exec app composer install
+- docker-compose exec app php artisan migrate --seed
+- docker-compose exec app php artisan key:generate
 
 ## About Laravel
 
