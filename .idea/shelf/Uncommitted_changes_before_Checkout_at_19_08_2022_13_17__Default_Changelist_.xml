@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_19_08_2022_13_17_[Default_Changelist]" date="1660904272630" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_08_2022_13_17_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 19.08.2022 13:17 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="docker/mysql/ibdata1" />
+    <option name="AFTER_PATH" value="docker/mysql/ibdata1" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_08_2022_13_17_[Default_Changelist]/ibdata1" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="docker/mysql/ib_logfile0" />
+    <option name="AFTER_PATH" value="docker/mysql/ib_logfile0" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_19_08_2022_13_17_[Default_Changelist]/ib_logfile0" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="docker/mysql/ibtmp1" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+</changelist>
