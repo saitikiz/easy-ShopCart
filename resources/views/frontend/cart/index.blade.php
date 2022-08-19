@@ -33,7 +33,7 @@
                                                         </td>
                                                         <td>{{number_format($item->price, 2, ",", ".") }} TL</td>
                                                         <td class="text-right">{{number_format($item->price * $item->quantity, 2, ",", ".")}} TL</td>
-                                                        <td><button onclick="removeFromCart({{$item->product->id}})" class="btn btn-danger">Sil</button> </td>
+                                                        <td><button onclick="removeFromCart({{$item->product->id}})" class="btn btn-danger btn-load">Sil</button> </td>
                                                     </tr>
                                                     @endforeach
 
