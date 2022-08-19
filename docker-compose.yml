@@ -53,9 +53,7 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - type: bind
-        source: ./docker/mysql
-        target: /var/lib/mysql
+      - db_volume:/var/lib/mysql
     networks:
       - app-network
 
@@ -91,3 +89,6 @@ services:
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  db_volume:
