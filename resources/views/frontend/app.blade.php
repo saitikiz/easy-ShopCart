@@ -31,6 +31,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.0/css/perfect-scrollbar.min.css"
           rel="stylesheet"/>
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet"/>
+
     @yield('styles')
 </head>
 
@@ -164,13 +165,17 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/main.js?v=1.2') }}"></script>
 <script>
     $(document).ready(function () {
         @guest
         @else
         getCartItemCount();
         @endguest
+
+        $(".btn-load").click(function (){
+            $(this).prop( "disabled", true);
+        })
     })
 
 
