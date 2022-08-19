@@ -1,0 +1,93 @@
+version: '3.8'
+services:
+  #PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: docker/dockerfiles/app/Dockerfile
+    image: shopcart
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    depends_on:
+      - db
+      - redis
+      - echo
+      - webserver
+    volumes:
+      - ./:/var/www
+      - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - app-network
+
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+      - type: bind
+        source: ./docker/nginx/nginx.conf
+        target: /etc/nginx/nginx.conf
+    depends_on:
+      - echo
+    networks:
+      - app-network
+
+  #MySQL Service
+  db:
+    image: mysql:5.7.22
+    restart: unless-stopped
+    tty: true
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - type: bind
+        source: ./docker/mysql
+        target: /var/lib/mysql
+    networks:
+      - app-network
+
+  redis:
+    image: redis
+    networks:
+      - app-network
+
+  echo:
+    image: oanhnn/laravel-echo-server
+    environment:
+      #REDIS_PREFIX: ""
+      LARAVEL_ECHO_SERVER_DEBUG: "true"
+      LARAVEL_ECHO_SERVER_AUTH_HOST: "http://webserver"
+    depends_on:
+      - redis
+    networks:
+      - app-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "81:80"
+    links:
+      - db:db
+    environment:
+      MYSQL_USER: root
+      UPLOAD_LIMIT: 3000000000
+    networks:
+      - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
