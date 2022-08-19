@@ -46,8 +46,7 @@
                                             {{ $product->price ?? '' }}
                                         </td>
                                         <td>
-                                            <a onclick="addToCart({{$product->id}})">Sepete Ekle</a>
-
+                                            <button onclick="addToCart({{$product->id}})" class="btn btn-primary btn-sm btn-load">Sepete Ekle</button>
                                         </td>
 
                                     </tr>

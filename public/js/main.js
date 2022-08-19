@@ -18,6 +18,7 @@ function getCartItemCount() {
                 location.href = "/login"
             } else {
                 //hata mesajı
+                alert("Hata")
             }
         })
 
@@ -31,18 +32,19 @@ function addToCart(product_id) {
         data: {product_id: product_id,}
     })
         .done(function () {
-            //mesaj
+            location.reload()
         })
         .fail(function (err) {
+            console.log(err)
             if (err.status == 401) {
                 location.href = "/login"
             } else {
                 //hata mesajı
+                alert("Hata")
+                $(".btn-load").prop( "disabled", false);
             }
         })
-        .always(function (){
-            location.reload()
-        })
+
 }
 
 function removeFromCart(product_id) {
@@ -53,18 +55,18 @@ function removeFromCart(product_id) {
         data: {product_id: product_id,}
     })
         .done(function () {
-            //mesaj
+            location.reload()
         })
         .fail(function (err) {
             if (err.status == 401) {
                 location.href = "/login"
             } else {
                 //hata mesajı
+                alert("Hata")
+                $(".btn-load").prop( "disabled", false);
             }
         })
-        .always(function (){
-            location.reload()
-        })
+
 }
 
 function updateCart(product_id, quantity) {
@@ -78,16 +80,19 @@ function updateCart(product_id, quantity) {
         })
             .done(function () {
                 //mesaj
+                location.reload()
             })
             .fail(function (err) {
                 if (err.status == 401) {
                     location.href = "/login"
                 } else {
                     //hata mesajı
+                    alert("Hata")
+                    $(".btn-load").prop( "disabled", false);
                 }
             })
             .always(function (){
-                location.reload()
+
             })
     },1000)
 }
